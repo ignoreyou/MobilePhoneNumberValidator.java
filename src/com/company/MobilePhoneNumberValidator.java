@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class MobilePhoneNumberValidator {
 
-    //тута число ввожу
     public void phoneNumberVerification() {
         Scanner number = new Scanner(System.in);
         System.out.print("Enter phone number: ");
@@ -19,15 +18,11 @@ public class MobilePhoneNumberValidator {
         }
     }
 
-    //метод шоб чекнуть чи являється строка числом
-    //я його в інеті піддивився і шось хуйово понімаю як він работає
     public boolean checkString(String string) {
         if (string == null) return false;
         return string.matches("^-?\\d+$");
     }
 
-    //тута вже чекаю спочатку чи є введена шняга числом кроме першого сімвола
-    //дальше чекаю по дліні і по кодам операторів
     public boolean operatorNumberCheck(String str) {
         String code;
         if (checkString(str.substring(1))) {
@@ -70,7 +65,6 @@ public class MobilePhoneNumberValidator {
         }
     }
 
-    //тута якщо єсть + спереді то отрізаю його і преобразовую строку в массів чисельний
     public static int[] arrayConversion(String str) {
         if (str.startsWith("+"))
             str = str.substring(1);
@@ -82,7 +76,6 @@ public class MobilePhoneNumberValidator {
         return array;
     }
 
-    //тута вже сщітаю все шо ото получілось
     public void calculationPart(int[] array) {
         int sum1 = 0, sum2;
         for (int i = 0; i < array.length; i++) {
